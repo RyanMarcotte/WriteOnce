@@ -1,0 +1,27 @@
+language: csharp
+mono: none
+sudo: required
+dist: xenial
+dotnet: 3.1
+
+addons:
+ apt:
+  sources:
+   - sourceline: 'ppa:mike42/mdcheckr'
+  packages:
+   - mdcheckr
+
+script:
+ - git ls-files | grep '\.md$' | tr '\n' '\0' | xargs -0 mdcheckr
+ - cd src
+ - dotnet restore
+ - dotnet build -c Release
+ - dotnet test WriteOnce.sln
+
+deploy:
+ skip_cleanup: true
+ provider: script
+ script: chmod +x ./deploy/deploy.sh && ./deploy/deploy.sh $NUGET_API_KEY $NUGET_SOURCE
+ on:
+  tags: true
+  condition: "$TRAVIS_TAG =~ -release$"

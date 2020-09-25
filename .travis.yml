@@ -14,8 +14,8 @@ addons:
 script:
  - git ls-files | grep '\.md$' | tr '\n' '\0' | xargs -0 mdcheckr
  - cd src
- - dotnet restore
- - dotnet build -c Release
+ - dotnet restore WriteOnce.sln
+ - dotnet build -c Release WriteOnce.sln
  - dotnet test WriteOnce.sln
 
 deploy:

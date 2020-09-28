@@ -29,8 +29,8 @@ namespace WriteOnce
 		/// <param name="valueAlreadySetExceptionFactory">The function to invoke when attempting to set the value when the value has already been set.</param>
 		public WriteOnce(Func<ValueNotSetException> valueNotSetExceptionFactory, Func<ValueAlreadySetException> valueAlreadySetExceptionFactory)
 		{
-			_valueNotSetExceptionFactory = valueNotSetExceptionFactory;
-			_valueAlreadySetExceptionFactory = valueAlreadySetExceptionFactory;
+			_valueNotSetExceptionFactory = valueNotSetExceptionFactory ?? throw new ArgumentNullException(nameof(valueNotSetExceptionFactory));
+			_valueAlreadySetExceptionFactory = valueAlreadySetExceptionFactory ?? throw new ArgumentNullException(nameof(valueAlreadySetExceptionFactory));
 		}
 
 		/// <summary>

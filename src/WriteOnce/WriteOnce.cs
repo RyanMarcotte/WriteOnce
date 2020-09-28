@@ -10,6 +10,28 @@ namespace WriteOnce
 	public class WriteOnce<T>
 	{
 		private readonly TaskCompletionSource<T> _tcs = new TaskCompletionSource<T>();
+		private readonly Func<ValueNotSetException> _valueNotSetExceptionFactory;
+		private readonly Func<ValueAlreadySetException> _valueAlreadySetExceptionFactory;
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="WriteOnce{T}"/> class.
+		/// </summary>
+		public WriteOnce()
+			: this(() => new ValueNotSetException(), () => new ValueAlreadySetException())
+		{
+
+		}
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="WriteOnce{T}"/> class.
+		/// </summary>
+		/// <param name="valueNotSetExceptionFactory">The function to invoke when attempting to access the value when no value has been set.</param>
+		/// <param name="valueAlreadySetExceptionFactory">The function to invoke when attempting to set the value when the value has already been set.</param>
+		public WriteOnce(Func<ValueNotSetException> valueNotSetExceptionFactory, Func<ValueAlreadySetException> valueAlreadySetExceptionFactory)
+		{
+			_valueNotSetExceptionFactory = valueNotSetExceptionFactory ?? throw new ArgumentNullException(nameof(valueNotSetExceptionFactory));
+			_valueAlreadySetExceptionFactory = valueAlreadySetExceptionFactory ?? throw new ArgumentNullException(nameof(valueAlreadySetExceptionFactory));
+		}
 
 		/// <summary>
 		/// Indicates if the value has been set.
@@ -21,8 +43,8 @@ namespace WriteOnce
 		/// </summary>
 		public T Value
 		{
-			get => HasValue ? _tcs.Task.Result : throw new ValueNotSetException();
-			set => _tcs.TrySetResult(value).EnsureTrue(() => throw new ValueAlreadySetException());
+			get => HasValue ? _tcs.Task.Result : throw _valueNotSetExceptionFactory.Invoke();
+			set => _tcs.TrySetResult(value).EnsureTrue(() => throw _valueAlreadySetExceptionFactory.Invoke());
 		}
 
 		/// <summary>

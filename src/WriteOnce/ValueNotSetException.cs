@@ -10,8 +10,18 @@ namespace WriteOnce
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ValueNotSetException"/> class.
 		/// </summary>
-		internal ValueNotSetException()
-			: base($"Attempted to retrieve a value from '{typeof(WriteOnce<>)}', but value not set!")
+		public ValueNotSetException()
+			: this($"Attempted to retrieve a value from '{typeof(WriteOnce<>)}', but value not set!")
+		{
+
+		}
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="ValueNotSetException"/> class.
+		/// </summary>
+		/// <param name="message"></param>
+		public ValueNotSetException(string message)
+			: base(message)
 		{
 
 		}

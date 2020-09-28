@@ -10,8 +10,18 @@ namespace WriteOnce
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ValueAlreadySetException"/> class.
 		/// </summary>
-		internal ValueAlreadySetException()
-			: base($"Attempted to set the value in '{typeof(WriteOnce<>)}', but value already set!")
+		public ValueAlreadySetException()
+			: this($"Attempted to set the value in '{typeof(WriteOnce<>)}', but value already set!")
+		{
+
+		}
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="ValueAlreadySetException"/> class.
+		/// </summary>
+		/// <param name="message">The error message.</param>
+		public ValueAlreadySetException(string message)
+			: base(message)
 		{
 
 		}

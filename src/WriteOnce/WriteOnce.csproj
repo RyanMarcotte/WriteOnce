@@ -10,6 +10,8 @@
     <Copyright>2020</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/RyanMarcotte/WriteOnce</RepositoryUrl>
+    <Version>1.1.0</Version>
+    <PackageReleaseNotes>Enable use of custom error messages when exceptions are thrown</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

@@ -4,7 +4,7 @@ using Functional;
 using Functional.Primitives.FluentAssertions;
 using Xunit;
 
-namespace WriteOnce.Tests
+namespace WriteOnceContainer.Tests
 {
 	public class WriteOnceTests
 	{

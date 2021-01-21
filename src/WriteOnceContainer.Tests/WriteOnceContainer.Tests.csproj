@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WriteOnce\WriteOnce.csproj" />
+    <ProjectReference Include="..\WriteOnceContainer\WriteOnceContainer.csproj" />
   </ItemGroup>
 
 </Project>

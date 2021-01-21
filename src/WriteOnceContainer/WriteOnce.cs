@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace WriteOnce
+namespace WriteOnceContainer
 {
 	/// <summary>
 	/// Encapsulates a value that can only be set once.

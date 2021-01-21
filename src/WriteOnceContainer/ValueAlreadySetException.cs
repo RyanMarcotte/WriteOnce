@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WriteOnce
+namespace WriteOnceContainer
 {
 	/// <summary>
 	/// Exception thrown from <see cref="WriteOnce{T}"/> when the value has already been set.

@@ -12,7 +12,7 @@ namespace WriteOnceContainer.FluentAssertions
 	[DebuggerNonUserCode]
 	public class WriteOnceTypeAssertions<T>
 	{
-		private const string IDENTIFIER = "option";
+		private const string IDENTIFIER = "container";
 
 		private readonly WriteOnce<T> _subject;
 
@@ -37,7 +37,7 @@ namespace WriteOnceContainer.FluentAssertions
 				.ForCondition(_subject.HasValue)
 				.BecauseOf(because, becauseArgs)
 				.WithDefaultIdentifier(IDENTIFIER)
-				.FailWith($"Expected {{context:{IDENTIFIER}}} to have value{{reason}}, but received no value instead.", _subject);
+				.FailWith($"Expected {{context:{IDENTIFIER}}} to have value set{{reason}}, but value has not been set yet.", _subject);
 
 			return new AndWriteOnceValueConstraint<T>(_subject.Value);
 		}
@@ -59,7 +59,7 @@ namespace WriteOnceContainer.FluentAssertions
 			FailReason FailReasonForNotHaveValue()
 			{
 				var builder = new StringBuilder();
-				builder.AppendLine($"Expected {{context:{IDENTIFIER}}} to not have value{{reason}}, but received a value instead:");
+				builder.AppendLine($"Expected {{context:{IDENTIFIER}}} to not have value set{{reason}}, but the value has been set:");
 				builder.AppendLine(_subject.Value.ToString());
 
 				return new FailReason(builder.ToString());

@@ -1,12 +1,11 @@
 # WriteOnce
 
-## WriteOnce<T>
+## WriteOnce&lt;T>
 
 `WriteOnce<T>` is a thread-safe value container whose value can be set exactly once.  Install the `WriteOnceContainer` NuGet package.
 
 ``` csharp
 using WriteOnceContainer;
-
 
 var writeOnce = new WriteOnce<int>();
 var value = writeOnce.Value; // throws ValueNotSetException because value has not been set yet

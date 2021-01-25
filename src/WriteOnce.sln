@@ -7,9 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WriteOnceContainer", "Write
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WriteOnceContainer.Tests", "WriteOnceContainer.Tests\WriteOnceContainer.Tests.csproj", "{2C35B7FC-77E9-4C84-9730-8306B3FE6F9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WriteOnceContainer.FluentAssertions", "WriteOnceContainer.FluentAssertions\WriteOnceContainer.FluentAssertions.csproj", "{0AC3625D-E956-45D0-A898-4976559F6050}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WriteOnceContainer.FluentAssertions", "WriteOnceContainer.FluentAssertions\WriteOnceContainer.FluentAssertions.csproj", "{0AC3625D-E956-45D0-A898-4976559F6050}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WriteOnceContainer.FluentAssertions.Tests", "WriteOnceContainer.FluentAssertions.Tests\WriteOnceContainer.FluentAssertions.Tests.csproj", "{6A713608-D66F-439B-AA5D-F15473393762}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WriteOnceContainer.FluentAssertions.Tests", "WriteOnceContainer.FluentAssertions.Tests\WriteOnceContainer.FluentAssertions.Tests.csproj", "{6A713608-D66F-439B-AA5D-F15473393762}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WriteOnceContainer.Blazor", "WriteOnceContainer.Blazor\WriteOnceContainer.Blazor.csproj", "{85F12FBB-C0BC-4607-AD3E-93F9FD9FCC23}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WriteOnceContainer.Blazor.Tests", "WriteOnceContainer.Blazor.Tests\WriteOnceContainer.Blazor.Tests.csproj", "{16415CCE-5CCE-4545-B587-DEC7D40A1994}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{6A713608-D66F-439B-AA5D-F15473393762}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A713608-D66F-439B-AA5D-F15473393762}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A713608-D66F-439B-AA5D-F15473393762}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16415CCE-5CCE-4545-B587-DEC7D40A1994}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16415CCE-5CCE-4545-B587-DEC7D40A1994}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16415CCE-5CCE-4545-B587-DEC7D40A1994}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16415CCE-5CCE-4545-B587-DEC7D40A1994}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85F12FBB-C0BC-4607-AD3E-93F9FD9FCC23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85F12FBB-C0BC-4607-AD3E-93F9FD9FCC23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85F12FBB-C0BC-4607-AD3E-93F9FD9FCC23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85F12FBB-C0BC-4607-AD3E-93F9FD9FCC23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

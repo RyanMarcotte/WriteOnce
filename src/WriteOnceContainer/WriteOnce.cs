@@ -48,6 +48,11 @@ namespace WriteOnceContainer
 		}
 
 		/// <summary>
+		/// Throw an exception if the value has not been set.
+		/// </summary>
+		public void ThrowIfNotSet() => HasValue.EnsureTrue(_valueNotSetExceptionFactory);
+
+		/// <summary>
 		/// Gets the value of this <see cref="WriteOnce{T}"/>.
 		/// </summary>
 		/// <param name="source">The <see cref="WriteOnce{T}"/> instance.</param>
